@@ -39,4 +39,4 @@ def index():
    print(amcPrice)
    print(apePrice)
    print(sum)
-   return render_template("index.html", data="{:.3f}".format(sum), amc=amcPrice, ape=apePrice)
+   return render_template("index.html", data="{:.3f}".format(sum), amc=f"{amcPrice} $", ape=f"{apePrice}$")
