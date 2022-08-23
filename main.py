@@ -3,11 +3,13 @@ sys.path.insert(0, 'lib')
 import requests
 from flask import Flask, redirect, url_for, request, render_template
 import json
+from currency_converter import CurrencyConverter
 app = Flask(__name__)
 
 
 @app.route("/", methods=['GET'])
 def index():
+
    url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=APE,AMC"
 
    headers = {
@@ -24,10 +26,10 @@ def index():
    response = response.json()
 
    allTickers = []
-   sum = 0
+   sumReg = 0
 
    for ticker in response["quoteResponse"]["result"]:
-      sum += ticker["regularMarketPrice"]
+      sumReg += ticker["regularMarketPrice"]
       mPrice = ticker["regularMarketPrice"]
       if ticker["symbol"] == "AMC":
          amcPrice = f"AMC \n{mPrice}"
@@ -38,5 +40,8 @@ def index():
 
    print(amcPrice)
    print(apePrice)
-   print(sum)
-   return render_template("index.html", data="{:.3f}".format(sum), amc=f"{amcPrice} $", ape=f"{apePrice}$")
+   print(sumReg)
+
+   return render_template("index.html", data="{:.3f}".format(sumReg), amc=f"{amcPrice} $", ape=f"{apePrice} $")
+
+app.run()
