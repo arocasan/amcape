@@ -44,4 +44,4 @@ def index():
 
    return render_template("index.html", data="{:.3f}".format(sumReg), amc=f"{amcPrice} $", ape=f"{apePrice} $")
 
-app.run()
+app.run(
