@@ -41,4 +41,4 @@ def index():
    print(sum)
    return render_template("index.html", data=sum, amc=amcPrice, ape=apePrice)
 
-app.run()
+app.run(debug=True)
