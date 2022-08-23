@@ -1,6 +1,8 @@
 import json
 import requests
 from flask import Flask, redirect, url_for, request, render_template
+import sys
+sys.path.insert(0, 'lib')
 app = Flask(__name__)
 
 
