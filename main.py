@@ -60,10 +60,5 @@ def index():
    print(f"Regular market sum: {sumReg}")
    print(f"Post market sum: {pSum}")
 
-def repeat(index):
-   index()
-   Timer(1, repeat(index)).start()
-
    return render_template("index.html", data="{:.3f}".format(sumReg), amc=f"Regular market price: {amcPrice} $", ape=f"Regular market price: {apePrice} $", p_data="{:.3f}".format(pSum), p_amc=f"Post market price:{pAmcPrice} $", p_ape=f"Post market price:{pApePrice} $")
 
-repeat(index)
