@@ -4,11 +4,13 @@ import requests
 from flask import Flask, redirect, url_for, request, render_template
 import json
 from currency_converter import CurrencyConverter
+
 app = Flask(__name__)
 
 
 @app.route("/", methods=['GET'])
 def index():
+
 
    url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=APE,AMC"
 
