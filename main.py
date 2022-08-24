@@ -60,6 +60,6 @@ def index():
    print(f"Regular market sum: {sumReg}")
    print(f"Post market sum: {pSum}")
 
-   return render_template("index.html", data="{:.3f}".format(sumReg), amc=f"Regular market price: {amcPrice} $", ape=f"Regular market price: {apePrice} $", p_data="{:.3f}".format(pSum), p_amc=f"Pre/Post market price:{pAmcPrice} $", p_ape=f"Pre/Post market price:{pApePrice} $")
+   return render_template("index.html", data="{:.3f}".format(sumReg), amc=f"Regular market price: {amcPrice} $", ape=f"Regular market price: {apePrice} $", p_data="{:.3f}".format(pSum), p_amc=f"Pre/Post market price: {pAmcPrice} $", p_ape=f"Pre/Post market price: {pApePrice} $")
 
 app.run()
