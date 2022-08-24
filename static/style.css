@@ -22,7 +22,7 @@ font-family: 'AMC Theaters Regular';
 }
 
 h2 {
-font-family: 'AMC Theaters Regular';
+font-family: gordita,Helvetica,sans-serif;
  font-style: normal;
  font-weight: normal;
  font-size: 15px;
@@ -63,7 +63,7 @@ font-size:8px;
 }
 
 .regularPrice{
- font-family: 'AMC Theaters Regular';
+ font-family: gordita,Helvetica,sans-serif;
  font-style: normal;
  font-weight: normal;
  font-size: 300px;
@@ -72,7 +72,7 @@ font-size:8px;
   padding: 0;
  }
  .postPrice{
- font-family: 'AMC Theaters Regular';
+ font-family: gordita,Helvetica,sans-serif;
  font-style: normal;
  font-weight: normal;
  font-size: 100px;

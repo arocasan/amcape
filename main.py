@@ -29,9 +29,9 @@ def index():
    response = response.json()
 
    allTickers = []
-   pAllTickers = []
+#   pAllTickers = []
    sumReg = 0
-   pSum = 0
+#   pSum = 0
 
    for ticker in response["quoteResponse"]["result"]:
       sumReg += ticker["regularMarketPrice"]
@@ -43,21 +43,22 @@ def index():
 
       allTickers.append(ticker["regularMarketPrice"])
 
-   for pTicker in response["quoteResponse"]["result"]:
-      pSum += pTicker["preMarketPrice"]
-      pPrice = pTicker["preMarketPrice"]
-      if pTicker["symbol"] == "AMC":
-         pAmcPrice = f"AMC \n{pPrice}"
-      if pTicker["symbol"] == "APE":
-         pApePrice = f"APE \n{pPrice}"
+#   for pTicker in response["quoteResponse"]["result"]:
+#      pSum += pTicker["preMarketPrice"]
+#      pPrice = pTicker["preMarketPrice"]
+#      if pTicker["symbol"] == "AMC":
+#         pAmcPrice = f"AMC \n{pPrice}"
+#      if pTicker["symbol"] == "APE":
+#         pApePrice = f"APE \n{pPrice}"
 
-      pAllTickers.append(pTicker["preMarketPrice"])
+#      pAllTickers.append(pTicker["preMarketPrice"])
 
    print(f"Regular market price: {amcPrice}")
    print(f"Regular market price: {apePrice}")
-   print(f"Post market price:  {pAmcPrice}")
-   print(f"Post market price: {pApePrice}")
+#   print(f"Post market price:  {pAmcPrice}")
+#   print(f"Post market price: {pApePrice}")
    print(f"Regular market sum: {sumReg}")
-   print(f"Post market sum: {pSum}")
+#   print(f"Post market sum: {pSum}")
 
-   return render_template("index.html", data="{:.3f}".format(sumReg), amc=f"Regular market price: {amcPrice} $", ape=f"Regular market price: {apePrice} $", p_data="{:.3f}".format(pSum), p_amc=f"Pre/Post market price: {pAmcPrice} $", p_ape=f"Pre/Post market price: {pApePrice} $")
+
+   return render_template("index.html", data="{:.3f}".format(sumReg), amc=f"Regular market price: {amcPrice} $",ape=f"Regular market price: {apePrice} $")#, p_data="{:.3f}".format(pSum)p_amc=f"Pre/Post market price: {pAmcPrice} $", p_ape=f"Pre/Post market price: {pApePrice} $")repeat(index)
