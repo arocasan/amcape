@@ -1,7 +1,14 @@
 {% extends "layout.html"%}
 
 {% block content %}
- <div>
+<script>
+$(document).ready(function(){
+setInterval(function(){
+      $("#all").load(window.location.href + " #all" );
+}, 1* 1000);
+});
+</script>
+ <div id="all">
      <h1>AMC + APE</h1>
      <div class="center"><h2>Summed up Regular Market price:</h2></div>
      <div class="regularPrice">{{data}}</div>
@@ -14,7 +21,7 @@
      <div class="center"><p>{{amc}} <br>{{ape}}</p></div>
      <div class="center"><p>{{p_amc}} <br>{{p_ape}}</p></div>
 
-     <div class="center"><p>*This is just an experimental only!! DO NOT make ANY decisions based on ANY information displayed here!!<br>
+     <div class="center"><p>*This is just an experiment!! DO NOT make ANY decisions based on ANY information displayed here!!<br>
      We are not responsible for any error or omissions, or for the results obtained from  the use of this information. All information is provided "as is", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information.</p></div>
  </div>
 
